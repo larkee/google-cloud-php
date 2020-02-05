@@ -11,6 +11,7 @@
             "name": "google/cloud",
             "defaultService": "servicebuilder",
             "versions": [
+                "v0.125.0",
                 "v0.124.0",
                 "v0.123.0",
                 "v0.122.0",
@@ -169,6 +170,7 @@
             "name": "google/cloud-asset",
             "defaultService": "asset/readme",
             "versions": [
+                "v0.6.0",
                 "v0.5.0",
                 "v0.4.0",
                 "v0.3.4",
@@ -360,6 +362,7 @@
             "name": "google/cloud-container",
             "defaultService": "container/readme",
             "versions": [
+                "v0.12.0",
                 "v0.11.0",
                 "v0.10.4",
                 "v0.10.3",
@@ -400,6 +403,7 @@
             "name": "google/cloud-core",
             "defaultService": "core/servicebuilder",
             "versions": [
+                "v1.35.0",
                 "v1.34.0",
                 "v1.33.1",
                 "v1.33.0",
@@ -763,6 +767,7 @@
             "name": "google/cloud-firestore",
             "defaultService": "firestore/firestoreclient",
             "versions": [
+                "v1.10.2",
                 "v1.10.1",
                 "v1.10.0",
                 "v1.9.0",
@@ -864,6 +869,7 @@
             "name": "google/cloud-kms",
             "defaultService": "kms/readme",
             "versions": [
+                "v1.8.1",
                 "v1.8.0",
                 "v1.7.0",
                 "v1.6.0",
@@ -1074,6 +1080,7 @@
             "name": "google/cloud-oslogin",
             "defaultService": "oslogin/readme",
             "versions": [
+                "v0.11.0",
                 "v0.10.0",
                 "v0.9.5",
                 "v0.9.4",
@@ -1113,6 +1120,7 @@
             "name": "google/cloud-pubsub",
             "defaultService": "pubsub/pubsubclient",
             "versions": [
+                "v1.21.0",
                 "v1.20.0",
                 "v1.19.0",
                 "v1.18.0",
@@ -1230,6 +1238,7 @@
             "name": "google/cloud-scheduler",
             "defaultService": "scheduler/readme",
             "versions": [
+                "v1.1.1",
                 "v1.1.0",
                 "v1.0.1",
                 "v1.0.0",
@@ -1268,6 +1277,7 @@
             "name": "google/cloud-spanner",
             "defaultService": "spanner/spannerclient",
             "versions": [
+                "v1.24.0",
                 "v1.23.0",
                 "v1.22.0",
                 "v1.21.0",
@@ -1409,6 +1419,7 @@
             "name": "google/cloud-storage",
             "defaultService": "storage/storageclient",
             "versions": [
+                "v1.18.0",
                 "v1.17.0",
                 "v1.16.1",
                 "v1.16.0",
@@ -1460,6 +1471,7 @@
             "name": "google/cloud-talent",
             "defaultService": "talent/readme",
             "versions": [
+                "v0.9.0",
                 "v0.8.2",
                 "v0.8.1",
                 "v0.8.0",
