@@ -1,5 +1,121 @@
 # Changelog
 
+## 0.125.0
+
+<details><summary>google/cloud-asset 0.6.0</summary>
+
+
+
+### Features
+
+* add uri_prefix to gcs destination ([#2638](https://www.github.com/googleapis/google-cloud-php/issues/2638)) ([cc6a210](https://www.github.com/googleapis/google-cloud-php/commit/cc6a2102ed63e5eb8c109a65e1c367b47e082767))
+
+</details>
+
+<details><summary>google/cloud-container 0.12.0</summary>
+
+
+
+### Features
+
+* update clients ([#2640](https://www.github.com/googleapis/google-cloud-php/issues/2640)) ([541b20e](https://www.github.com/googleapis/google-cloud-php/commit/541b20ec2f8754e3204d7c81debf4b0273282d64))
+
+</details>
+
+<details><summary>google/cloud-core 1.35.0</summary>
+
+
+
+### Features
+
+* support iam conditions ([#2416](https://www.github.com/googleapis/google-cloud-php/issues/2416)) ([ddc58ee](https://www.github.com/googleapis/google-cloud-php/commit/ddc58ee36deee7b7f71c2026c28f7632700b78e7))
+
+</details>
+
+<details><summary>google/cloud-firestore 1.10.2</summary>
+
+
+
+### Bug Fixes
+
+* update documentation ([#2645](https://www.github.com/googleapis/google-cloud-php/issues/2645)) ([147fdf4](https://www.github.com/googleapis/google-cloud-php/commit/147fdf413c1bddd2e8e7b32083c8ae3e7fd84e30))
+
+</details>
+
+<details><summary>google/cloud-kms 1.8.1</summary>
+
+
+
+### Bug Fixes
+
+* update metadata ([#2646](https://www.github.com/googleapis/google-cloud-php/issues/2646)) ([86dc948](https://www.github.com/googleapis/google-cloud-php/commit/86dc948e1ef7ffb4487af8d331b13bf5ef127203))
+
+</details>
+
+<details><summary>google/cloud-oslogin 0.11.0</summary>
+
+
+
+### ⚠ BREAKING CHANGES
+
+* update clients (#2669)
+
+### Features
+
+* update clients ([#2669](https://www.github.com/googleapis/google-cloud-php/issues/2669)) ([3170002](https://www.github.com/googleapis/google-cloud-php/commit/31700022bc64b9acbb39ce37c675684fffa764c1))
+
+</details>
+
+<details><summary>google/cloud-pubsub 1.21.0</summary>
+
+
+
+### Features
+
+* add client id to streaming pull config ([#2657](https://www.github.com/googleapis/google-cloud-php/issues/2657)) ([a6e31ae](https://www.github.com/googleapis/google-cloud-php/commit/a6e31ae7e5291291c336c5d20fa78c7d42a246e1))
+
+</details>
+
+<details><summary>google/cloud-scheduler 1.1.1</summary>
+
+
+
+### Bug Fixes
+
+* update documentation ([#2663](https://www.github.com/googleapis/google-cloud-php/issues/2663)) ([9154837](https://www.github.com/googleapis/google-cloud-php/commit/915483716220b213d40a646de8de98abcee8135c))
+
+</details>
+
+<details><summary>google/cloud-spanner 1.24.0</summary>
+
+
+
+### Features
+
+* inject database info on list databases ([#2656](https://www.github.com/googleapis/google-cloud-php/issues/2656)) ([e6308a6](https://www.github.com/googleapis/google-cloud-php/commit/e6308a6f9b6683439b8b1e6ac9675b6c5ed6edb9))
+
+</details>
+
+<details><summary>google/cloud-storage 1.18.0</summary>
+
+
+
+### Features
+
+* support iam conditions ([#2416](https://www.github.com/googleapis/google-cloud-php/issues/2416)) ([ddc58ee](https://www.github.com/googleapis/google-cloud-php/commit/ddc58ee36deee7b7f71c2026c28f7632700b78e7))
+
+</details>
+
+<details><summary>google/cloud-talent 0.9.0</summary>
+
+
+
+### Features
+
+* update clients ([#2651](https://www.github.com/googleapis/google-cloud-php/issues/2651)) ([a074815](https://www.github.com/googleapis/google-cloud-php/commit/a074815e4e309ed9d130561dce8dc91cb7e4138d))
+
+</details>
+
 ## 0.124.0
 
 <details><summary>google/cloud-dialogflow 0.11.0</summary>
