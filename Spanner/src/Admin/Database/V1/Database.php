@@ -44,6 +44,31 @@ class Database extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $restore_info = null;
+    /**
+     * Output only. Custom encryption configuration (Cloud KMS keys).
+     * Applicable only for databases using the Customer Managed Encryption Keys
+     * feature.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $encryption_config = null;
+    /**
+     * Output only. The period in which Cloud Spanner retains all versions of data
+     * for the database. This is same as the value of version_retention_period
+     * database option set using
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]. Defaults to 1 hour,
+     * if not set.
+     *
+     * Generated from protobuf field <code>string version_retention_period = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $version_retention_period = '';
+    /**
+     * Output only. Earliest timestamp at which older versions of the data can be
+     * read.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_version_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $earliest_version_time = null;
 
     /**
      * Constructor.
@@ -64,6 +89,19 @@ class Database extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Spanner\Admin\Database\V1\RestoreInfo $restore_info
      *           Output only. Applicable only for restored databases. Contains information
      *           about the restore source.
+     *     @type \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig $encryption_config
+     *           Output only. Custom encryption configuration (Cloud KMS keys).
+     *           Applicable only for databases using the Customer Managed Encryption Keys
+     *           feature.
+     *     @type string $version_retention_period
+     *           Output only. The period in which Cloud Spanner retains all versions of data
+     *           for the database. This is same as the value of version_retention_period
+     *           database option set using
+     *           [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]. Defaults to 1 hour,
+     *           if not set.
+     *     @type \Google\Protobuf\Timestamp $earliest_version_time
+     *           Output only. Earliest timestamp at which older versions of the data can be
+     *           read.
      * }
      */
     public function __construct($data = NULL) {
@@ -201,6 +239,118 @@ class Database extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Spanner\Admin\Database\V1\RestoreInfo::class);
         $this->restore_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Custom encryption configuration (Cloud KMS keys).
+     * Applicable only for databases using the Customer Managed Encryption Keys
+     * feature.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig
+     */
+    public function getEncryptionConfig()
+    {
+        return isset($this->encryption_config) ? $this->encryption_config : null;
+    }
+
+    public function hasEncryptionConfig()
+    {
+        return isset($this->encryption_config);
+    }
+
+    public function clearEncryptionConfig()
+    {
+        unset($this->encryption_config);
+    }
+
+    /**
+     * Output only. Custom encryption configuration (Cloud KMS keys).
+     * Applicable only for databases using the Customer Managed Encryption Keys
+     * feature.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig $var
+     * @return $this
+     */
+    public function setEncryptionConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig::class);
+        $this->encryption_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The period in which Cloud Spanner retains all versions of data
+     * for the database. This is same as the value of version_retention_period
+     * database option set using
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]. Defaults to 1 hour,
+     * if not set.
+     *
+     * Generated from protobuf field <code>string version_retention_period = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getVersionRetentionPeriod()
+    {
+        return $this->version_retention_period;
+    }
+
+    /**
+     * Output only. The period in which Cloud Spanner retains all versions of data
+     * for the database. This is same as the value of version_retention_period
+     * database option set using
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]. Defaults to 1 hour,
+     * if not set.
+     *
+     * Generated from protobuf field <code>string version_retention_period = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionRetentionPeriod($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_retention_period = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Earliest timestamp at which older versions of the data can be
+     * read.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_version_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getEarliestVersionTime()
+    {
+        return isset($this->earliest_version_time) ? $this->earliest_version_time : null;
+    }
+
+    public function hasEarliestVersionTime()
+    {
+        return isset($this->earliest_version_time);
+    }
+
+    public function clearEarliestVersionTime()
+    {
+        unset($this->earliest_version_time);
+    }
+
+    /**
+     * Output only. Earliest timestamp at which older versions of the data can be
+     * read.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_version_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setEarliestVersionTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->earliest_version_time = $var;
 
         return $this;
     }

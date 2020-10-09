@@ -85,6 +85,14 @@ class Backup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string referencing_databases = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $referencing_databases;
+    /**
+     * Output only. The encryption information for the backup.
+     * If the encryption key protecting this resource is customer managed, then
+     * kms_key_version will be filled.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionInfo encryption_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $encryption_info = null;
 
     /**
      * Constructor.
@@ -134,6 +142,10 @@ class Backup extends \Google\Protobuf\Internal\Message
      *           any referencing database prevents the backup from being deleted. When a
      *           restored database from the backup enters the `READY` state, the reference
      *           to the backup is removed.
+     *     @type \Google\Cloud\Spanner\Admin\Database\V1\EncryptionInfo $encryption_info
+     *           Output only. The encryption information for the backup.
+     *           If the encryption key protecting this resource is customer managed, then
+     *           kms_key_version will be filled.
      * }
      */
     public function __construct($data = NULL) {
@@ -395,6 +407,46 @@ class Backup extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->referencing_databases = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The encryption information for the backup.
+     * If the encryption key protecting this resource is customer managed, then
+     * kms_key_version will be filled.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionInfo encryption_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Spanner\Admin\Database\V1\EncryptionInfo
+     */
+    public function getEncryptionInfo()
+    {
+        return isset($this->encryption_info) ? $this->encryption_info : null;
+    }
+
+    public function hasEncryptionInfo()
+    {
+        return isset($this->encryption_info);
+    }
+
+    public function clearEncryptionInfo()
+    {
+        unset($this->encryption_info);
+    }
+
+    /**
+     * Output only. The encryption information for the backup.
+     * If the encryption key protecting this resource is customer managed, then
+     * kms_key_version will be filled.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionInfo encryption_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Spanner\Admin\Database\V1\EncryptionInfo $var
+     * @return $this
+     */
+    public function setEncryptionInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Spanner\Admin\Database\V1\EncryptionInfo::class);
+        $this->encryption_info = $var;
 
         return $this;
     }

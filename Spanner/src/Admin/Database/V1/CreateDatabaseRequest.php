@@ -41,6 +41,12 @@ class CreateDatabaseRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string extra_statements = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $extra_statements;
+    /**
+     * Optional.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $encryption_config = null;
 
     /**
      * Constructor.
@@ -62,6 +68,8 @@ class CreateDatabaseRequest extends \Google\Protobuf\Internal\Message
      *           database. Statements can create tables, indexes, etc. These
      *           statements execute atomically with the creation of the database:
      *           if there is an error in any statement, the database is not created.
+     *     @type \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig $encryption_config
+     *           Optional.
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,42 @@ class CreateDatabaseRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->extra_statements = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig
+     */
+    public function getEncryptionConfig()
+    {
+        return isset($this->encryption_config) ? $this->encryption_config : null;
+    }
+
+    public function hasEncryptionConfig()
+    {
+        return isset($this->encryption_config);
+    }
+
+    public function clearEncryptionConfig()
+    {
+        unset($this->encryption_config);
+    }
+
+    /**
+     * Optional.
+     *
+     * Generated from protobuf field <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig $var
+     * @return $this
+     */
+    public function setEncryptionConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig::class);
+        $this->encryption_config = $var;
 
         return $this;
     }

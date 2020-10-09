@@ -51,6 +51,7 @@ use Google\Cloud\Spanner\Admin\Database\V1\CreateDatabaseRequest;
 use Google\Cloud\Spanner\Admin\Database\V1\Database;
 use Google\Cloud\Spanner\Admin\Database\V1\DeleteBackupRequest;
 use Google\Cloud\Spanner\Admin\Database\V1\DropDatabaseRequest;
+use Google\Cloud\Spanner\Admin\Database\V1\EncryptionConfig;
 use Google\Cloud\Spanner\Admin\Database\V1\GetBackupRequest;
 use Google\Cloud\Spanner\Admin\Database\V1\GetDatabaseDdlRequest;
 use Google\Cloud\Spanner\Admin\Database\V1\GetDatabaseDdlResponse;
@@ -161,6 +162,7 @@ class DatabaseAdminGapicClient
         'https://www.googleapis.com/auth/spanner.admin',
     ];
     private static $backupNameTemplate;
+    private static $cryptoKeyNameTemplate;
     private static $databaseNameTemplate;
     private static $instanceNameTemplate;
     private static $pathTemplateMap;
@@ -195,6 +197,15 @@ class DatabaseAdminGapicClient
         return self::$backupNameTemplate;
     }
 
+    private static function getCryptoKeyNameTemplate()
+    {
+        if (null == self::$cryptoKeyNameTemplate) {
+            self::$cryptoKeyNameTemplate = new PathTemplate('projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}');
+        }
+
+        return self::$cryptoKeyNameTemplate;
+    }
+
     private static function getDatabaseNameTemplate()
     {
         if (null == self::$databaseNameTemplate) {
@@ -218,6 +229,7 @@ class DatabaseAdminGapicClient
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'backup' => self::getBackupNameTemplate(),
+                'cryptoKey' => self::getCryptoKeyNameTemplate(),
                 'database' => self::getDatabaseNameTemplate(),
                 'instance' => self::getInstanceNameTemplate(),
             ];
@@ -243,6 +255,28 @@ class DatabaseAdminGapicClient
             'project' => $project,
             'instance' => $instance,
             'backup' => $backup,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a crypto_key resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $keyRing
+     * @param string $cryptoKey
+     *
+     * @return string The formatted crypto_key resource.
+     * @experimental
+     */
+    public static function cryptoKeyName($project, $location, $keyRing, $cryptoKey)
+    {
+        return self::getCryptoKeyNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'key_ring' => $keyRing,
+            'crypto_key' => $cryptoKey,
         ]);
     }
 
@@ -289,6 +323,7 @@ class DatabaseAdminGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - backup: projects/{project}/instances/{instance}/backups/{backup}
+     * - cryptoKey: projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}
      * - database: projects/{project}/instances/{instance}/databases/{database}
      * - instance: projects/{project}/instances/{instance}.
      *
@@ -489,6 +524,8 @@ class DatabaseAdminGapicClient
      *          database. Statements can create tables, indexes, etc. These
      *          statements execute atomically with the creation of the database:
      *          if there is an error in any statement, the database is not created.
+     *     @type EncryptionConfig $encryptionConfig
+     *          Optional.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -508,6 +545,9 @@ class DatabaseAdminGapicClient
         $request->setCreateStatement($createStatement);
         if (isset($optionalArgs['extraStatements'])) {
             $request->setExtraStatements($optionalArgs['extraStatements']);
+        }
+        if (isset($optionalArgs['encryptionConfig'])) {
+            $request->setEncryptionConfig($optionalArgs['encryptionConfig']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
