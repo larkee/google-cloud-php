@@ -403,6 +403,7 @@ class Database
     {
         $options += [
             'statements' => [],
+            'encryptionConfig' => null,
         ];
 
         $databaseId = DatabaseAdminClient::parseName($this->name())['database'];
@@ -411,7 +412,8 @@ class Database
         $operation = $this->connection->createDatabase([
             'instance' => $this->instance->name(),
             'createStatement' => $statement,
-            'extraStatements' => $options['statements']
+            'extraStatements' => $options['statements'],
+            'encryptionConfig' => $options['encryptionConfig']
         ]);
 
         return $this->resumeOperation($operation['name'], $operation);
