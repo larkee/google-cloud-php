@@ -7,7 +7,10 @@
         }
     ],
     "includes": [
+        "analytics-admin",
+        "analytics-data",
         "cloud-asset",
+        "cloud-assured-workloads",
         "cloud-automl",
         "cloud-bigquery",
         "cloud-bigquery-connection",
@@ -57,6 +60,7 @@
         "cloud-videointelligence",
         "cloud-vision",
         "cloud-web-risk",
-        "cloud-web-security-scanner"
+        "cloud-web-security-scanner",
+        "cloud-workflows"
     ]
 }
