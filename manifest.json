@@ -11,6 +11,7 @@
             "name": "google/cloud",
             "defaultService": "servicebuilder",
             "versions": [
+                "v0.148.0",
                 "v0.147.0",
                 "v0.146.0",
                 "v0.145.0",
@@ -567,10 +568,20 @@
             ]
         },
         {
+            "id": "cloud-compute",
+            "name": "google/cloud-compute",
+            "defaultService": "compute/readme",
+            "versions": [
+                "v0.1.0",
+                "master"
+            ]
+        },
+        {
             "id": "cloud-core",
             "name": "google/cloud-core",
             "defaultService": "core/servicebuilder",
             "versions": [
+                "v1.41.0",
                 "v1.40.0",
                 "v1.39.0",
                 "v1.38.0",
@@ -1487,6 +1498,7 @@
             "name": "google/cloud-pubsub",
             "defaultService": "pubsub/pubsubclient",
             "versions": [
+                "v1.29.4",
                 "v1.29.3",
                 "v1.29.2",
                 "v1.29.1",
@@ -1603,6 +1615,7 @@
             "name": "google/cloud-recommender",
             "defaultService": "recommender/readme",
             "versions": [
+                "v1.3.0",
                 "v1.2.2",
                 "v1.2.1",
                 "v1.2.0",
@@ -1714,6 +1727,7 @@
             "name": "google/cloud-security-center",
             "defaultService": "securitycenter/readme",
             "versions": [
+                "v1.1.0",
                 "v1.0.3",
                 "v1.0.2",
                 "v1.0.1",
@@ -1764,6 +1778,7 @@
             "name": "google/cloud-spanner",
             "defaultService": "spanner/spannerclient",
             "versions": [
+                "v1.32.3",
                 "v1.32.2",
                 "v1.32.1",
                 "v1.32.0",
@@ -1932,6 +1947,7 @@
             "name": "google/cloud-storage",
             "defaultService": "storage/storageclient",
             "versions": [
+                "v1.23.1",
                 "v1.23.0",
                 "v1.22.0",
                 "v1.21.1",
